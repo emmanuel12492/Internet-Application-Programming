@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <button class="button" onclick="navigate('page-upcoming-events')">View Upcoming Events</button>
+    <h1>Event Booking System</h1>
+    <div class="auth-buttons">
+        <button class="button" onclick="navigate('page-login')">Log In</button>
+        <button class="button" onclick="navigate('page-signup')">Sign Up</button>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Homepage -->
+    <div id="page-home" class="page">
+        <h2>Welcome to Our Event Booking Platform</h2>
+        <div class="features">
+            <div>
+                <h3>Easy Booking</h3>
+                <p>Book your favorite events in just a few clicks.</p>
+            </div>
+            <div>
+                <h3>Manage Your Bookings</h3>
+                <p>View past and upcoming events anytime.</p>
+            </div>
+            <div>
+                <h3>Secure Payments</h3>
+                <p>Make payments safely and securely.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other pages (omitted for brevity) -->
+
+</div>
+
+<!-- Placeholder for dynamically inserted image -->
+<div id="image-placeholder" style="text-align: center; margin: 20px 0;"></div>
+
+<footer>
+    <p><strong>Contact Us:</strong></p>
+    <p>Phone: +123 456 789</p>
+    <p>Email: info@eventbooking.com</p>
+    <p>&copy; 2024 Event Booking System</p>
+</footer>
+
+<script>
+    function addFooterImage() {
+        const placeholder = document.getElementById('image-placeholder');
+        
+        // Create a new image element
+        const img = document.createElement('img');
+        img.src = 'f2.jpeg'; // Replace with your image URL
+        img.alt = 'Footer Image';
+        img.style.width = '100%';
+        img.style.maxWidth = '600px';
+        img.style.borderRadius = '8px';
+        
+        // Append the image to the placeholder div
+        placeholder.appendChild(img);
+    }
+
+    // Call the function to add the image (can be triggered by an event or condition)
+    addFooterImage();
+</script>
+
+</body>
+</html>

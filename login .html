@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planning System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            background: white;
+            padding: 1.5em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .button {
+            display: inline-block;
+            margin: 1em 0.5em;
+            padding: 0.7em 1.5em;
+            font-size: 1em;
+            color: white;
+            background-color: #0073e6;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #005bb5;
+        }
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+        .event-list li {
+            padding: 1em;
+            margin: 1em 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function navigate(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        function bookEvent(eventName) {
+            alert(`You have booked the event: ${eventName}`);
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Event Planning System</h1>
+</header>
+
+<div class="container">
+    <!-- First Page -->
+    <div id="page-home" class="page">
+        <h2>Welcome to Our Online Event Booking System</h2>
+        <p>Plan and book your events easily with our user-friendly platform.</p>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <br><br>
+            <button class="button" type="submit">Log In</button>
+        </form>
+        <p>Don't have an account? <button class="button" onclick="navigate('page-signup')">Sign Up</button></p>
+    </div>
+
+    <!-- Second Page: Event List -->
+    <div id="page-events" class="page" style="display: none;">
+        <h2>Available Events</h2>
+        <ul class="event-list">
+            <li>
+                <span>Event 1: Tech Conference</span>
+                <button class="button" onclick="bookEvent('Tech Conference')">Book Now</button>
+            </li>
+            <li>
+                <span>Event 2: Music Festival</span>
+                <button class="button" onclick="bookEvent('Music Festival')">Book Now</button>
+            </li>
+            <li>
+                <span>Event 3: Art Exhibition</span>
+                <button class="button" onclick="bookEvent('Art Exhibition')">Book Now</button>
+            </li>
+        </ul>
+        <button class="button" onclick="navigate('page-home')">Back to Home</button>
+    </div>
+
+    <!-- Placeholder for Log In and Sign Up Pages -->
+    <div id="page-login" class="page" style="display: none;">
+        <h2>Log In</h2>
+        <p>Log in functionality will go here.</p>
+        <button class="button" onclick="navigate('page-home')">Back to Home</button>
+    </div>
+
+    <div id="page-signup" class="page" style="display: none;">
+        <h2>Sign Up</h2>
+        <p>Sign up functionality will go here.</p>
+        <button class="button" onclick="navigate('page-home')">Back to Home</button>
+    </div>
+</div>
+
+</body>
+</html>
